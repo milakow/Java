@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: edu.sda.java.tdd.StringCalculatorTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.041 s <<< FAILURE! - in edu.sda.java.tdd.StringCalculatorTest
+checkIfCalcCountsUnknownAmountOfNumbersSeparatedByNewLines  Time elapsed: 0.006 s  <<< ERROR!
+java.lang.NumberFormatException: 
+For input string: "1
+2"
+	at edu.sda.java.tdd.StringCalculatorTest.checkIfCalcCountsUnknownAmountOfNumbersSeparatedByNewLines(StringCalculatorTest.java:89)
+
