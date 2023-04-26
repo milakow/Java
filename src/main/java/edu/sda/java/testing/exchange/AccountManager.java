@@ -1,4 +1,4 @@
-package edu.sda.java.testing;
+package edu.sda.java.testing.exchange;
 
 /**
  * Create AccountManager class that for given Account is calculating the value in PLN.
@@ -9,27 +9,12 @@ package edu.sda.java.testing;
  */
 public class AccountManager {
 
-    static class Account {
-        private int amount;
-        private String currency;
+    private ExchangeService exchangeService;
 
-        public Account(int amount, String currency) {
-            this.amount = amount;
-            this.currency = currency;
-        }
-
-        public int getAmount() {
-            return amount;
-        }
-        public String getCurrency() {
-            return currency;
-        }
+    public AccountManager(ExchangeService exchangeService) {
+        this.exchangeService = exchangeService;
     }
-
-    static class ExchangeService {
-        double getExchangeRate(String currencyCode) {
-            return 0;
-        }
+    public int amountInPLN(Account account) {
+        return (int) (account.getAmount() * exchangeService.getExchangeRate(account.getCurrency()));
     }
-
 }

@@ -1,2 +1,6 @@
-package edu.sda.java.testing;public class ExchangeService {
+package edu.sda.java.testing.exchange;
+
+public interface ExchangeService {
+    public double getExchangeRate(String currencyCode);
+
 }
