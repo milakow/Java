@@ -22,18 +22,16 @@ package edu.sda.java.advanced.Tasks.ex7house;
  * In the program create a house with two rooms: one default and the other, larger, with four windows.
  */
 public class Window {
-    String state = "closed";
+    private boolean open = false;
 
-    Window(String state) {
-        this.state = state;
+    public Window(boolean open) {
+        this.open = open;
     }
 
-    public String getState() {
-        return state;
+    public Window() {
     }
-
-    public void setState(String state) {
-        this.state = state;
+    boolean openWindow() {
+        return true;
     }
 
 
