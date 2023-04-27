@@ -7,24 +7,23 @@ public class GuineaPig extends Animal {
     private String race;
 
     public GuineaPig(String name, int age, String race) {
-        this.name = name;
-        this.age = age;
+        super(name, age);
         this.race = race;
     }
 
     public GuineaPig() {
-        name = "Tequila";
-        age = 4;
+        super("Tequila",4);
         race = "crested";
     }
 
+    @Override
     public void makeSound() {
-        sing();
+        System.out.println("kui kui");;
     }
 
-    public void sing() {
-        System.out.println("kui kui");
-    }
+//    public void sing() {
+//        System.out.println("kui kui");
+//    }
 
     public void biteCage() {
         System.out.println("I am biting my cage");

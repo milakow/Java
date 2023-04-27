@@ -4,17 +4,20 @@ public class AnimalKeeper {
 
     public void feedDog(Dog dog) {
         dog.eatSomething();
-        dog.bark();
+//        dog.bark();
+        dog.makeSound();
     }
 
     public void feedCat(Cat cat) {
         cat.eatSomething();
-        cat.meow();
+//        cat.meow();
+        cat.makeSound();
     }
 
     public void feedGuineaPig (GuineaPig guineaPig) {
         guineaPig.eatSomething();
-        guineaPig.sing();
+//        guineaPig.sing();
+        guineaPig.makeSound();
     }
 
     public void feed(Animal animal) {
@@ -34,4 +37,12 @@ public class AnimalKeeper {
         //it is imposible to call dog methods on type Animal
 //        animal.bark();
 //        animal.meow();
-    }}
+    }
+
+    public void feed(Animal... animals) {
+        for (Animal animal : animals) {
+            animal.eatSomething();
+            animal.makeSound();
+        }
+    }
+}

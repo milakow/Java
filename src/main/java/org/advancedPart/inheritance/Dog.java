@@ -4,34 +4,31 @@ import java.util.Arrays;
 
 public class Dog extends Animal {
 
-    private String name;
-    private int age;
     private String[] tricks;
     private int lastTrickIndex = 0;
 
     public Dog(String name, int age, int maxTTricks) {
-        this.name = name;
-        this.age = age;
+        super(name, age);
         this.tricks = new String[maxTTricks];
     }
 
     public Dog() {
-        name = "Bruno";
-        age = 8;
+        super("Bruno", 8);
         tricks = new String[3];
     }
 
     public void makeSound() {
-        bark();
+        System.out.println("woof, woof");;
     }
-    public void bark() {
-        System.out.println("woof, woof");
-    }
+//    public void bark() {
+//        System.out.println("woof, woof");
+//    }
 
     public void teachDogNewTrick(String trick) {
         if (lastTrickIndex == tricks.length) {
             System.out.println("Sorry, this dog is old and cannot learn new tricks :(");
-            bark();
+//            bark();
+            makeSound();
             return;
         }
         tricks[lastTrickIndex++] = trick;

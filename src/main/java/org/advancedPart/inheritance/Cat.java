@@ -1,36 +1,39 @@
 package org.advancedPart.inheritance;
 
 public class Cat extends Animal {
-    private String name;
-    private int age;
+
     private String color;
 
     public Cat(String name, int age, String color) {
-        this.name = name;
-        this.age = age;
+        super(name, age);
         this.color = color;
     }
 
     public Cat() {
-        name = "Luna";
-        age = 1;
+        super("Luna", 1);
         color = "black";
     }
 
+    @Override
     public void makeSound() {
-        meow();
-    }
-    public void meow() {
         System.out.println("meow! meow!....");
     }
+//    public void meow() {
+//        System.out.println("meow! meow!....");
+//    }
 
     public void distractTheOwner() {
         System.out.println("Cat is distracting with its meowing");
-        meow();
-        meow();
-        meow();
-        meow();
-        meow();
+//        meow();
+//        meow();
+//        meow();
+//        meow();
+//        meow();
+        makeSound();
+        makeSound();
+        makeSound();
+        makeSound();
+        makeSound();
     }
 
     public void eatSomething() {
