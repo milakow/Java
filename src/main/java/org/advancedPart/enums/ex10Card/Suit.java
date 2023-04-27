@@ -34,6 +34,10 @@ public enum Suit {
         return abbreviation;
     }
 
+    public void setStrength(int strength) {
+        this.strength = strength;
+    }
+
     @Override
     public String toString() {
         return "Suit{" +

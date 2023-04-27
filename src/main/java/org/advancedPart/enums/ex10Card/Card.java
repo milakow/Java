@@ -15,12 +15,21 @@ public class Card {
     private Rank rank;
     private Suit suit;
 
-    public Card(Rank rank, Suit suit) {
-        this.rank = rank;
-        this.suit = suit;
+    Card(Rank rank, Suit suit) {
+//        this.rank = Rank.valueOf(rank.getAbbreviation());
+        this.rank = Rank.valueOf(rank.getAbbreviation());
+        this.suit = Suit.valueOf(suit.getAbbreviation());
     }
 
     public int retrieveStrength(Rank rank, Suit suit) {
         return suit.getStrength() * rank.getStrength();
+    }
+
+    @Override
+    public String toString() {
+        return "Card{" +
+                "rank=" + rank +
+                ", suit=" + suit +
+                '}';
     }
 }
