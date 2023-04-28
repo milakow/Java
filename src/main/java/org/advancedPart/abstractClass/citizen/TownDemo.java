@@ -15,9 +15,10 @@ public class TownDemo {
 
         Citizen[] citizens = new Citizen[]{king,soldier1,soldier2,townsman1,townsman2,peasant1,peasant2,peasant3};
 
-        Town town = new Town();
-        System.out.println(town.howManyCanVote(citizens));
-        System.out.println(town.whoCanVote(citizens));
+        Town town = new Town(citizens);
+        System.out.println(town.howManyCanVote());
+        System.out.println(town.howManyCanVote());
+        town.whoCanVote();
 
 
 

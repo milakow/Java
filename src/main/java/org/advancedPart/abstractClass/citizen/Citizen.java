@@ -1,7 +1,7 @@
 package org.advancedPart.abstractClass.citizen;
 
 public abstract class  Citizen {
-    String name;
+    private String name;
     boolean result;
 
     public Citizen(String name) {
@@ -10,5 +10,9 @@ public abstract class  Citizen {
 
     public boolean canVote() {
         return result;
+    }
+
+    public String getName() {
+        return name;
     }
 }

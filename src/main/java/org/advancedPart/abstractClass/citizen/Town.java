@@ -1,16 +1,16 @@
 package org.advancedPart.abstractClass.citizen;
 
 public class Town {
-    King king;
-    Soldier soldier;
-    Townsman townsman;
-    Peasant peasant;
+    private Citizen[] citizens;
 
-    Citizen[] citizens = new Citizen[]{king,soldier,townsman,peasant};
+    public Town(Citizen[] citizens) {
+        this.citizens = citizens;
+    }
 
-    int counter;
+//    int counter;
 
-    public int howManyCanVote(Citizen... citizens) {
+    public int howManyCanVote() {
+        int counter = 0;
         for (Citizen citizen : citizens) {
             if (citizen.canVote()) {
                 counter += 1;
@@ -19,12 +19,11 @@ public class Town {
         return counter;
     }
 
-    public String whoCanVote(Citizen... citizens) {
+    public void whoCanVote() {
         for (Citizen citizen : citizens) {
             if (citizen.canVote()) {
-                System.out.println(citizen.name);
+                System.out.println(citizen.getName());
             }
         }
-        return " ";
     }
 }

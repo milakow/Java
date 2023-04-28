@@ -7,7 +7,7 @@ public class King extends Citizen {
 
     @Override
     public boolean canVote() {
-       return true;
+       return false;
     }
 
 }
