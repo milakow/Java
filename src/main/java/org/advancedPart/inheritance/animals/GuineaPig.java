@@ -1,4 +1,4 @@
-package org.advancedPart.inheritance;
+package org.advancedPart.inheritance.animals;
 
 public class GuineaPig extends Animal {
 

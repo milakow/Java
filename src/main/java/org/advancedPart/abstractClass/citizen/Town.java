@@ -1,9 +1,14 @@
 package org.advancedPart.abstractClass.citizen;
 
-public class Town {
-    private Citizen[] citizens;
+import java.util.ArrayList;
+import java.util.Objects;
 
-    public Town(Citizen[] citizens) {
+public class Town {
+//    private Citizen[] citizens;
+    private ArrayList<Citizen> citizens = new ArrayList<>();
+
+
+    public Town(ArrayList<Citizen> citizens) {
         this.citizens = citizens;
     }
 
