@@ -7,8 +7,6 @@ public class Town {
         this.citizens = citizens;
     }
 
-//    int counter;
-
     public int howManyCanVote() {
         int counter = 0;
         for (Citizen citizen : citizens) {
