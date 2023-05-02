@@ -5,39 +5,38 @@ public class Receipt {
     public Car car;
     private String typeOfService;
     private int amount;
-    private float totalPrice;
+    private int priceOfRepair = 100;
 
     public Receipt() {
-
     }
 
-
-    public Receipt(String typeOfService, int amount, float totalPrice) {
+    public Receipt(String typeOfService, int amount) {
         this.typeOfService = typeOfService;
         this.amount = amount;
-        this.totalPrice = totalPrice;
     }
-    public Receipt(Car car, String typeOfService, int amount, float totalPrice) {
+    public Receipt(Car car, String typeOfService, int amount) {
         this.car = car;
         this.typeOfService = typeOfService;
         this.amount = amount;
-        this.totalPrice = totalPrice;
+    }
+
+    public String getTypeOfService() {
+        return typeOfService;
     }
 
     public void setTypeOfService(String typeOfService) {
         this.typeOfService = typeOfService;
     }
 
+    public int getAmount() {
+        return amount;
+    }
     public void setAmount(int amount) {
         this.amount = amount;
     }
 
-    public void setTotalPrice(float totalPrice) {
-        this.totalPrice = totalPrice;
-    }
-
-    public String displayReceipt(String typeOfService, int amount, float totalPrice) {
-        return "Service " + typeOfService + " x " + amount + " you have to pay" + totalPrice;
+    public String displayReceipt(String typeOfService, int amount) {
+        return "For service " + typeOfService + " x " + amount + " times, you have to pay " + (amount * priceOfRepair) + "PLN";
     }
 
 }

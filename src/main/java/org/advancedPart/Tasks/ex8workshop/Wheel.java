@@ -3,25 +3,13 @@ package org.advancedPart.Tasks.ex8workshop;
 public class Wheel {
     private double pressure;
     private double appropriatePressure;
-
-//    boolean result;
-
-    private boolean needRepair;
-
-    //boolean needRepair and then add method in workshop to repair the wheel
+    private boolean isDamaged;
 
 
-    public Wheel(double pressure) {
-        this.pressure = pressure;
-    }
-
-    public Wheel(double pressure, double appropriatePressure) {
+    public Wheel(double pressure, double appropriatePressure, boolean isDamaged) {
         this.pressure = pressure;
         this.appropriatePressure = appropriatePressure;
-    }
-
-    public double getPressure() {
-        return pressure;
+        this.isDamaged = isDamaged;
     }
 
     public void setPressure(double pressure) {
@@ -30,18 +18,21 @@ public class Wheel {
 
     public double getAppropriatePressure() {return appropriatePressure;}
 
-//    boolean checkingWheelPressure(double pressure, double appropriatePressure) {
-//        if (pressure < appropriatePressure) {
-//            boolean result = false;
-//        }
-//        return result;
-//    }
+    public boolean isDamaged() {
+        return isDamaged;
+    }
+
+    public void setDamaged(boolean damaged) {
+        isDamaged = damaged;
+    }
+
 
     @Override
     public String toString() {
         return "Wheel{" +
                 "pressure=" + pressure +
                 ", appropriatePressure=" + appropriatePressure +
+                ", isDamaged=" + isDamaged +
                 '}';
     }
 }

@@ -4,10 +4,7 @@ import java.util.Random;
 
 public class Workshop {
 
-    //method in workshop to repair broken wheel
-    //workshop should get car object
-    private Wheel[] wheels;
-    //    private Car car = new Car(wheels);
+    Receipt receipt = new Receipt();
     private final Random random = new Random();
 
     //    double testedPressure;
@@ -16,17 +13,18 @@ public class Workshop {
         return !(numOfClients > 15);
     }
 
-    void repairCar(Wheel[] wheels) {
-        for (Wheel wheel : wheels) {
-//            if (!wheel.checkingWheelPressure(wheel.getPressure(), wheel.getAppropriatePressure())) {
-//                System.out.println("Service for: " + wheel);
-//                wheel.setPressure(wheel.getAppropriatePressure());
-//            } else continue;
-            if (wheel.getPressure() != wheel.getAppropriatePressure()) {
-                System.out.println("Service for: " + wheel);
+    public String repairCar(Car car) {
+        int amount = 0;
+        for (Wheel wheel : car.getWheels()) {
+            if (wheel.isDamaged()) {
                 wheel.setPressure(wheel.getAppropriatePressure());
+                wheel.setDamaged(false);
+                receipt.setTypeOfService("Reparing wheel");
+                amount += 1;
             }
+            receipt.setAmount(amount);
         }
+        return receipt.displayReceipt(receipt.getTypeOfService(), receipt.getAmount());
     }
 }
 
