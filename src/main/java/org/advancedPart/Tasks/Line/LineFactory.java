@@ -5,6 +5,7 @@ package org.advancedPart.Tasks.Line;
 import java.util.Random;
 
 /**
+ * task6
  * In the program with Lines, create an additional class: LineFactory, and in it create methods that produce and return:
  * - a Line object of random length with a selected character,
  * - a line of the selected length but with a random character,
