@@ -16,5 +16,22 @@ public class CarDemo {
         System.out.println("Next service for car1 in: " + car1.distanceToGo() + "km");
         System.out.println("Next service for car2 in: " + car2.distanceToGo() +"km");
 
+        //task3
+        System.out.println("Task 3: ");
+        Car car3 = new Car("Jeep", 32000);
+        Car car4 = new Car("Kia");
+        System.out.println("We have a new car: ");
+        car3.displayCarInfo();
+        System.out.println("We want to buy " + car4.getBrand());
+
+        //task4
+        System.out.println("Task 4: ");
+        System.out.println(car2);
+
+        //task5
+        System.out.println("Task 5: ");
+        System.out.println(car2.getBrand());
+
+
     }
 }

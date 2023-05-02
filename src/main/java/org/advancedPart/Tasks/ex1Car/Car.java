@@ -12,6 +12,15 @@ public class Car {
         this.mileageForReview = mileageForReview;
     }
 
+    public Car(String brand, int mileage) {
+        this.brand = brand;
+        this.mileage = mileage;
+    }
+
+    public Car(String brand) {
+        this.brand = brand;
+    }
+
     public void displayCarInfo() {
         System.out.println("Car's brand: " + brand + ", car's mileage: " + mileage);
     }
@@ -25,9 +34,20 @@ public class Car {
         return mileageForReview - mileage;
     }
 
+    public String getBrand() {
+        return brand;
+    }
 
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
 
-
-
-
+    @Override
+    public String toString() {
+        return "Car{" +
+                "brand='" + brand + '\'' +
+                ", mileage=" + mileage +
+                ", mileageForReview=" + mileageForReview +
+                '}';
+    }
 }

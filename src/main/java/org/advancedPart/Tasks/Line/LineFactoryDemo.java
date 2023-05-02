@@ -1,4 +1,4 @@
-package org.advancedPart.Tasks.ex2;
+package org.advancedPart.Tasks.Line;
 
 public class LineFactoryDemo {
     public static void main(String[] args) {
@@ -10,11 +10,11 @@ public class LineFactoryDemo {
 
         LineFactory factory = new LineFactory();
         Line line = factory.withRandomLength("*");
-        line.print();
+        line.printLine();
 
-        factory.withRandomFilling(8).print();
+        factory.withRandomFilling(8).printLine();
         Line line2 = factory.withRandomFillingAndRandomLength();
-        line2.print();
+        line2.printLine();
 
         System.out.println();
         System.out.println();
@@ -22,14 +22,14 @@ public class LineFactoryDemo {
 
         Line[] createdLines = factory.createManyRandomLines(100);
         for (Line createdLine : createdLines) {
-            createdLine.print();
+            createdLine.printLine();
         }
         System.out.println();
         System.out.println();
         System.out.println();
 
-        factory.createLineWithGrowingLength().print();
-        factory.createLineWithGrowingLength().print();
-        factory.createLineWithGrowingLength().print();
+        factory.createLineWithGrowingLength().printLine();
+        factory.createLineWithGrowingLength().printLine();
+        factory.createLineWithGrowingLength().printLine();
     }
 }

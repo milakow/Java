@@ -1,4 +1,4 @@
-package org.advancedPart.Tasks.ex2;
+package org.advancedPart.Tasks.Line;
 
 //Task 6
 
