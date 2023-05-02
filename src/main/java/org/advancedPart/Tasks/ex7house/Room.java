@@ -14,7 +14,7 @@ public class Room {
     public void cleanRoom() {
         bed.changeBedding();
         for (int i = 0; i < windows.length; i++) {
-            windows[i].isOpen();
+            windows[i].open();
         }
     }
 

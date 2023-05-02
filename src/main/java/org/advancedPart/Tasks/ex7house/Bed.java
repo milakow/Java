@@ -11,8 +11,11 @@ public class Bed {
         counter = 0;
     }
 
-    public boolean isItChanged() {
+    public boolean isLinenChanged() {
         return counter == 0;
     }
 
+    public int getCounter() {
+        return counter;
+    }
 }
