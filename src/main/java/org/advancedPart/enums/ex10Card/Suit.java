@@ -11,38 +11,30 @@ package org.advancedPart.enums.ex10Card;
  * Create an entire deck, i.e. a list of all possible cards for all possible suits and ranks.
  */
 public enum Suit {
-    SPADES(4, "s"),
-    HEARTS(3, "h"),
-    DIAMONDS(2, "d"),
-    CLUBS(1, "c");
+    SPADES( "spades"),
+    HEARTS( "hearts"),
+    DIAMONDS( "diamonds"),
+    CLUBS( "clubs");
 
 
-    private int strength;
+    private String name;
 
-    private String abbreviation;
-
-    Suit(int strength, String abbreviation) {
-        this.strength = strength;
-        this.abbreviation = abbreviation;
+    Suit(String name) {
+        this.name = name;
     }
 
-    public int getStrength() {
-        return strength;
+    public String getName() {
+        return name;
     }
 
-    public String getAbbreviation() {
-        return abbreviation;
-    }
-
-    public void setStrength(int strength) {
-        this.strength = strength;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
         return "Suit{" +
-                "strength=" + strength +
-                ", abbreviation='" + abbreviation + '\'' +
+                ", name='" + name + '\'' +
                 '}';
     }
 

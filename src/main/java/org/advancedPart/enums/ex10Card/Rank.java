@@ -38,18 +38,6 @@ public enum Rank {
         return strength;
     }
 
-    public String getAbbreviation() {
-        return abbreviation;
-    }
-
-    public void setStrength(int strength) {
-        this.strength = strength;
-    }
-
-    public void setAbbreviation(String abbreviation) {
-        this.abbreviation = abbreviation;
-    }
-
     @Override
     public String toString() {
         return "Rank{" +
