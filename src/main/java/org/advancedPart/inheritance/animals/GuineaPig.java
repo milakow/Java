@@ -1,9 +1,7 @@
 package org.advancedPart.inheritance.animals;
 
-public class GuineaPig extends Animal {
+public class GuineaPig extends Animal implements Pet{
 
-    private String name;
-    private int age;
     private String race;
 
     public GuineaPig(String name, int age, String race) {
@@ -16,14 +14,13 @@ public class GuineaPig extends Animal {
         race = "crested";
     }
 
-    @Override
     public void makeSound() {
-        System.out.println("kui kui");;
+        sing();
     }
 
-//    public void sing() {
-//        System.out.println("kui kui");
-//    }
+    public void sing() {
+        System.out.println("kui kui");
+    }
 
     public void biteCage() {
         System.out.println("I am biting my cage");
@@ -45,5 +42,9 @@ public class GuineaPig extends Animal {
                 ", age=" + age +
                 ", race='" + race + '\'' +
                 '}';
+    }
+    @Override
+    public void pet() {
+        System.out.println("Guinea pig loves it!");
     }
 }

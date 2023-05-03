@@ -14,5 +14,5 @@ public abstract class Animal {
     }
 
     //in abstract classes we can make abstract methods
-    public void makeSound() {}
+    public abstract void makeSound();
 }

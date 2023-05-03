@@ -2,7 +2,7 @@ package org.advancedPart.inheritance.animals;
 
 import java.util.Arrays;
 
-public class Dog extends Animal {
+public class Dog extends Animal implements Pet {
 
     private String[] tricks;
     private int lastTrickIndex = 0;
@@ -18,17 +18,17 @@ public class Dog extends Animal {
     }
 
     public void makeSound() {
-        System.out.println("woof, woof");;
+        bark();
     }
-//    public void bark() {
-//        System.out.println("woof, woof");
-//    }
+
+    public void bark() {
+        System.out.println("woof, woof");
+    }
 
     public void teachDogNewTrick(String trick) {
         if (lastTrickIndex == tricks.length) {
             System.out.println("Sorry, this dog is old and cannot learn new tricks :(");
-//            bark();
-            makeSound();
+            bark();
             return;
         }
         tricks[lastTrickIndex++] = trick;
@@ -43,6 +43,7 @@ public class Dog extends Animal {
             System.out.println(trick);
         }
     }
+
     @Override
     public String toString() {
         return "Dog{" +
@@ -55,5 +56,10 @@ public class Dog extends Animal {
 
     public void eatSomething() {
         System.out.println("Dog is eating.");
+    }
+
+    @Override
+    public void pet() {
+        System.out.println("dog is very happy!");
     }
 }

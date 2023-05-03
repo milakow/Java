@@ -9,20 +9,20 @@ public class AnimalKeeper {
 
     public void feedDog(Dog dog) {
         dog.eatSomething();
-//        dog.bark();
-        dog.makeSound();
+        dog.bark();
+//        dog.makeSound();
     }
 
     public void feedCat(Cat cat) {
         cat.eatSomething();
-//        cat.meow();
-        cat.makeSound();
+        cat.meow();
+//        cat.makeSound();
     }
 
     public void feedGuineaPig (GuineaPig guineaPig) {
         guineaPig.eatSomething();
-//        guineaPig.sing();
-        guineaPig.makeSound();
+        guineaPig.sing();
+//        guineaPig.makeSound();
     }
 
     public void feed(Animal animal) {
