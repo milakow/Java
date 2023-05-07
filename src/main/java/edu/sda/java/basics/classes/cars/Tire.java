@@ -1,4 +1,4 @@
-package edu.sda.java.basics.classes.cars.tires;
+package edu.sda.java.basics.classes.cars;
 
 public class Tire {
     /** --
@@ -18,4 +18,10 @@ public class Tire {
         this.tireName = tireName;
     }
 
+    @Override
+    public String toString() {
+        return "Tire{" +
+                "tireName='" + tireName + '\'' +
+                '}';
+    }
 }

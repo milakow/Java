@@ -23,6 +23,11 @@ public class  Engine {
      */
 
 //    LocalDate dateOfProduction = LocalDate.of(java.time.Year);
+    /**
+     * Add a LocalDate "date of production" to engine and another one to car
+     * print them with other car data, but narrow engine to year and car to month and year of production
+     *
+     */
 
     private LocalDate dateOfProduction;
 
@@ -30,6 +35,12 @@ public class  Engine {
 
     private float capacity;
 
+    public Engine(){}
+    public Engine(LocalDate dateOfProduction, String fuelType, float capacity) {
+        this.dateOfProduction = dateOfProduction;
+        this.fuelType = fuelType;
+        this.capacity = capacity;
+    }
 
     public LocalDate getDateOfProduction() {return dateOfProduction; }
 
@@ -53,7 +64,14 @@ public class  Engine {
     }
 
     public String engineInfo() {
-        return "Fuel type: " + fuelType + ", capacity: " + capacity;
+        return "Fuel type: " + fuelType + ", capacity: " + capacity + ", date of production: " + dateOfProduction.getYear();
     }
 
+    @Override
+    public String toString() {
+        return "Engine{" +
+                "fuelType='" + fuelType + '\'' +
+                ", capacity=" + capacity +
+                '}';
+    }
 }
