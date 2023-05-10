@@ -13,7 +13,7 @@ import java.util.List;
  * The basket can hold from 0 to 10 elements. In case the user tries to remove an element when the state is 0
  * or add an element when the state is 10, throw the appropriate runtime exception (BasketFullException or BasketEmptyException).
  */
-public class Basket {
+public class Basket<T> {
     List<String> basket = new LinkedList<>();
     int currentNumberOfElements;
 
@@ -21,14 +21,14 @@ public class Basket {
         this.currentNumberOfElements = currentNumberOfElements;
     }
 
-    public void addToBasket(String element) throws BasketFullException {
+    public void addToBasket(T element) throws BasketFullException {
         if (currentNumberOfElements < 10) {
             basket.add(element);
             currentNumberOfElements++;
         } else throw new BasketFullException("The basket is full.");
 }
 
-    public void removeFromBasket(String element) throws BasketEmptyException {
+    public void removeFromBasket(T element) throws BasketEmptyException {
         if (currentNumberOfElements > 0) {
             basket.remove(element);
             currentNumberOfElements--;
