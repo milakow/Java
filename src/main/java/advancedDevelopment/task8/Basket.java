@@ -14,7 +14,7 @@ import java.util.List;
  * or add an element when the state is 10, throw the appropriate runtime exception (BasketFullException or BasketEmptyException).
  */
 public class Basket<T> {
-    List<String> basket = new LinkedList<>();
+    List<T> basket = new LinkedList<>();
     int currentNumberOfElements;
 
     public Basket(int currentNumberOfElements) {
