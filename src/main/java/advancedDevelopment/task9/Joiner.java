@@ -10,23 +10,28 @@ import java.util.List;
  * For example, for Integers and a separator of "-", it should return: "1-2-3-4...".
  */
 
-public class Joiner<T> {
+public abstract class Joiner<T> {
 
     private List<T> joiner = new ArrayList<>();
     private String separator;
-
 
     public Joiner(String separator) {
         this.separator = separator;
     }
 
-    public String join(T... elements) {
-        String result = elements[0].toString();
-        for (int i = 1; i < elements.length; i++) {
-            result += separator + elements[i].toString();
+    public abstract String join(T... params);
 
-        } return result;
+//    public String join(T... params) {
+//        String result = params[0].toString();
+//        for (int i = 1; i < params.length; i++) {
+//            result += separator + params[i].toString();
+//
+//        }
+//        return result;
+//    }
 
-
+    public String getSeparator() {
+        return separator;
     }
 }
+
