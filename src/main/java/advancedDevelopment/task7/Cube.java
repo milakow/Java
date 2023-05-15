@@ -17,7 +17,7 @@ package advancedDevelopment.task7;
  */
 public class Cube extends ThreeDShape {
      private final int cubeEdge;
-    private double volume;
+    private double volume_of_water;
 
 
     public Cube(int cubeEdge) {
@@ -41,25 +41,25 @@ public class Cube extends ThreeDShape {
 
     @Override
     public boolean fill(int parameter) {
-        if (calculateVolume() > parameter) {
-            System.out.println("Shape remain under-filled");
-            setVolume(parameter);
-            return true;
-        } else if (calculateVolume() == parameter) {
-            System.out.println("Shape is filled with water up to the brim");
-            setVolume(parameter);
-            return true;
-        } else {
-            System.out.println("The water overflow!!!");
-            return false;
-        }
+            volume_of_water += parameter;
+            if (volume_of_water < calculateVolume()) {
+                System.out.println("Shape remain under-filled");
+                return true;
+            } else if (volume_of_water == calculateVolume()) {
+                System.out.println("Shape is filled with water up to the brim");
+                return true;
+            } else {
+                System.out.println("The water overflow!!!");
+                return false;
+
+            }
     }
 
-    public double getVolume() {
-        return volume;
+    public double getVolume_of_water() {
+        return volume_of_water;
     }
 
-    public void setVolume(double volume) {
-        this.volume = volume;
+    public void setVolume_of_water(double volume_of_water) {
+        this.volume_of_water = volume_of_water;
     }
 }

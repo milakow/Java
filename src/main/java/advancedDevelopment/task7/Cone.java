@@ -23,7 +23,7 @@ public class Cone extends ThreeDShape {
 
     private final double generatrix;
 
-    private double volume;
+    private double volume_of_water;
 
     public Cone(int baseRadius, int coneHeight, double generatrix) {
         this.baseRadius = baseRadius;
@@ -33,8 +33,7 @@ public class Cone extends ThreeDShape {
 
     @Override
     public double calculateVolume() {
-        volume = (1.0 / 3.0) * Math.PI * Math.pow(baseRadius, 2) * coneHeight;
-        return volume;
+        return (1.0 / 3.0) * Math.PI * Math.pow(baseRadius, 2) * coneHeight;
     }
 
     @Override
@@ -49,13 +48,12 @@ public class Cone extends ThreeDShape {
 
     @Override
     public boolean fill(int parameter) {
-        if (calculateVolume() > parameter) {
+        volume_of_water += parameter;
+        if (volume_of_water < calculateVolume()) {
             System.out.println("Shape remain under-filled");
-            setVolume(parameter);
             return true;
-        } else if (calculateVolume() == parameter) {
+        } else if (volume_of_water == calculateVolume()) {
             System.out.println("Shape is filled with water up to the brim");
-            setVolume(parameter);
             return true;
         } else {
             System.out.println("The water overflow!!!");
@@ -64,11 +62,11 @@ public class Cone extends ThreeDShape {
         }
     }
 
-    public double getVolume() {
-        return volume;
+    public double getVolume_of_water() {
+        return volume_of_water;
     }
 
-    public void setVolume(double volume) {
-        this.volume = volume;
+    public void setVolume_of_water(double volumeOfWater) {
+        this.volume_of_water = volume_of_water;
     }
 }
