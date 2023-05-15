@@ -21,11 +21,11 @@ public class Cone extends ThreeDShape {
 
     private final int coneHeight;
 
-    private final int generatrix;
+    private final double generatrix;
 
     private double volume;
 
-    public Cone(int baseRadius, int coneHeight, int generatrix) {
+    public Cone(int baseRadius, int coneHeight, double generatrix) {
         this.baseRadius = baseRadius;
         this.coneHeight = coneHeight;
         this.generatrix = generatrix;

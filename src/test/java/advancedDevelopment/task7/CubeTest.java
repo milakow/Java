@@ -31,4 +31,17 @@ class CubeTest {
         assertThat(result).isEqualTo(54.0);
     }
 
+    @Test
+    public void checkCubePerimeter(){
+        //given
+        Cube cube = new Cube(3);
+
+        //when
+        double result = cube.calculatePerimeter();
+
+        //then
+        assertThat(result).isEqualTo(0);
+
+    }
+
 }
