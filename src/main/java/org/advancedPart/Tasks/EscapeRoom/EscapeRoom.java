@@ -14,9 +14,9 @@ import java.util.Scanner;
  * An appropriate message should be displayed each time you try to use the object.
  */
 public class EscapeRoom {
-    Door door = new Door(false);
-    Window window;
-    Key key;
+    private Door door = new Door(false);
+    private Window window;
+    private Key key;
 
     public EscapeRoom(){}
     public EscapeRoom(Door door, Window window, Key key) {
@@ -25,40 +25,46 @@ public class EscapeRoom {
         this.key = key;
     }
 
-    public String tryToEscape() {
-        String message = "";
+    public void tryToEscape() {
         Scanner scanner = new Scanner(System.in);
         String userChoice = "";
 
         System.out.println("You are in the room. Let's start the game!!!");
 
-        while (door.isOpened == false) {
+        label:
+        while (!door.isDoorOpened()) {
             System.out.println("What is your choice? (Pick one: window- w, key- k, door- d.): ");
             userChoice = scanner.nextLine();
-            if (userChoice == "w") {
-                System.out.println("Do you want to open or close the window? ");
-                if (userChoice == "close") {
-                    window.close();
-//                    message = "The window is closed.";
-                    System.out.println("The window is closed.");
 
-                } else if (userChoice == "open") {
-                    window.open();
-//                    message = "The window is opened.";
-                    System.out.println("The window is opened.");
-
+            switch (userChoice) {
+                case "w" -> {
+                    window.changeWindowStatus();
+                    if (window.isWindowOpen() == false) {
+                        System.out.println("The window is closed.");
+                    } else if (window.isWindowOpen() == true) {
+                        System.out.println("The window is opened, but you can't go out here!");
+                    }
                 }
-            } else if (userChoice == "k") {
-                key.takeTheKey();
-                message = "The key is taken.";
-
-            } else if (userChoice == "d") {
-                door.openTheDoor();
-                message = "The door is opened. You win!!!";
+                case "k" -> {
+                    key.takeTheKey();
+                    System.out.println("The key is taken.");
+                }
+                case "d" -> {
+                    if (key.getNumberOfTakenKey() == 0) {
+                        System.out.println("You don't have a key! Try again");
+                    } else if (key.getNumberOfTakenKey() == 1) {
+                        door.openTheDoor(key);
+                        System.out.println("The door is opened!");
+                        break label;
+                    }
+                }
+                default -> {
+                    System.out.println("I don't know what you want to use. Repeat :)");
+                }
             }
+
         }
         System.out.println("You win!");
-        return message;
     }
 
 }

@@ -12,6 +12,7 @@ package org.advancedPart.Tasks.EscapeRoom;
  */
 public class Key {
     int numberOfKey;
+    int numberOfTakenKey;
 
     public Key() {}
     public Key(int numberOfKey) {
@@ -19,6 +20,7 @@ public class Key {
     }
 
     public int takeTheKey() {
+        numberOfTakenKey += 1;
         return numberOfKey = 0;
     }
 
@@ -28,5 +30,13 @@ public class Key {
 
     public void setNumberOfKey(int numberOfKey) {
         this.numberOfKey = numberOfKey;
+    }
+
+    public int getNumberOfTakenKey() {
+        return numberOfTakenKey;
+    }
+
+    public void setNumberOfTakenKey(int numberOfTakenKey) {
+        this.numberOfTakenKey = numberOfTakenKey;
     }
 }

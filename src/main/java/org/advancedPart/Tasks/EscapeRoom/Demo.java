@@ -12,12 +12,12 @@ package org.advancedPart.Tasks.EscapeRoom;
  */
 public class Demo {
     public static void main(String[] args) {
-//        Door door1 = new Door();
+        Door door1 = new Door(false);
         Window window1 = new Window();
         Key key1 = new Key();
 
-//        EscapeRoom escapeRoom = new EscapeRoom(Door door, Window window, Key key);
-        EscapeRoom escapeRoom = new EscapeRoom();
+        EscapeRoom escapeRoom = new EscapeRoom(door1, window1, key1);
+//        EscapeRoom escapeRoom = new EscapeRoom();
         escapeRoom.tryToEscape();
 //        System.out.println(escapeRoom.tryToEscape().);
     }

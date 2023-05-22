@@ -11,22 +11,24 @@ package org.advancedPart.Tasks.EscapeRoom;
  * An appropriate message should be displayed each time you try to use the object.
  */
 public class Door {
-    Key key;
-    boolean isOpened = false;
+    private Key key;
+    private boolean isDoorOpened = false;
 
     public Door(boolean isOpened) {
-        this.isOpened = isOpened;
+        this.isDoorOpened = isOpened;
     }
 
-    public String openTheDoor() {
-        String result = "";
-        if (key.getNumberOfKey() == 0) {
-            result = "There is no key to get!";
+    public void openTheDoor(Key key) {
+        if (key.getNumberOfKey() == 0 && key.getNumberOfTakenKey() ==1) {
+            isDoorOpened = true;
+            System.out.println("You managed to open the door.");
+            key.setNumberOfTakenKey(0);
         } else {
-            key.setNumberOfKey(0);
-            isOpened = true;
-            result = "The door is opened.";
+            System.out.println("You have to find the key!");
         }
-        return result;
+    }
+
+    public boolean isDoorOpened() {
+        return isDoorOpened;
     }
 }

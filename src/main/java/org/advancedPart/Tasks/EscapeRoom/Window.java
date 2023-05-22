@@ -11,18 +11,33 @@ package org.advancedPart.Tasks.EscapeRoom;
  * An appropriate message should be displayed each time you try to use the object.
  */
 public class Window {
-    boolean isOpened;
+    private boolean isWindowOpen;
 
-    Window (){}
+    public Window (){}
 
-    public Window(boolean isOpen) {
-        this.isOpened = isOpen;
-    }
-    public boolean open() {
-        return isOpened == true;
-    }
-    public boolean close() {
-        return isOpened == false;
+    public Window(boolean isWindowOpen) {
+        this.isWindowOpen = isWindowOpen;
     }
 
+    public void changeWindowStatus() {
+        if(isWindowOpen == true) {
+             setWindowOpen(false);
+        } else {
+            setWindowOpen(true);
+        }
+    }
+//    public boolean open() {
+//        return isWindowOpen == true;
+//    }
+//    public boolean close() {
+//        return isWindowOpen == false;
+//    }
+
+    public boolean isWindowOpen() {
+        return isWindowOpen;
+    }
+
+    public void setWindowOpen(boolean isWindowOpen) {
+        this.isWindowOpen = isWindowOpen;
+    }
 }
