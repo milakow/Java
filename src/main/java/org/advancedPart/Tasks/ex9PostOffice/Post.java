@@ -9,8 +9,32 @@ package org.advancedPart.Tasks.ex9PostOffice;
  */
 public class Post {
     private Packet packet;
+    private double money;
+    private double takings;
 
-    public void sendPacket(Packet packet) {
+    public Post(Packet packet, double money) {
+        this.packet = packet;
+        this.money = money;
+    }
 
+    public void sendPacket(Packet packet, double money) {
+        takings += money;
+        if (money < packet.getPriceOfPackage()){
+            takings -= money;
+            System.out.println("You paid not enough money.");
+        } else if (money > packet.getPriceOfPackage()) {
+            double rest = money - packet.getPriceOfPackage();
+            takings += packet.getPriceOfPackage();
+            packet.setStatus(Status.SHIPPED);
+            System.out.println("Current status of package: " + packet.getStatus() + ". Get the rest of the money: " + rest + "PLN.");
+        } else if (money == packet.getPriceOfPackage()) {
+            takings += money;
+            packet.setStatus(Status.SHIPPED);
+            System.out.println("Current status of package: " + packet.getStatus() + ". The amount of entered money is equal to the value of the shipment.");
+        }
+    }
+
+    public double getTakings() {
+        return takings;
     }
 }

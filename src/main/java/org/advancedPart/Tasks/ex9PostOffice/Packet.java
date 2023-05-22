@@ -1,5 +1,7 @@
 package org.advancedPart.Tasks.ex9PostOffice;
 
+import java.util.Scanner;
+
 public class Packet {
     private String sender;
     private String recipient;
@@ -51,6 +53,19 @@ public class Packet {
             price *= 1.1;
         }
         return price;
+    }
+
+//    public void createPacket(){
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Enter sender: ");
+//    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     @Override
